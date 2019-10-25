@@ -48,12 +48,14 @@
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",
+    "panolens": "^0.11.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-nested": "^4.1.2",
     "postcss-preset-env": "^6.7.0",
     "react-test-renderer": "^16.11.0",
     "redux-devtools-extension": "^2.13.8",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "three": "^0.109.0"
   },
   "scripts": {
     "build": "NODE_ENV=production next build",

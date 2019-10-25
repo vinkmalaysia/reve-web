@@ -7,6 +7,7 @@ module.exports = {
   assetPrefix: assetPath,
   target: 'server',
   webpack: (config, { dev }) => {
+    // CDN prefix
     config.output.publicPath = `${assetPath}${config.output.publicPath}`;
 
     return config;
