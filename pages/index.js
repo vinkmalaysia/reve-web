@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Head from 'next/head';
 import styled, { createGlobalStyle } from 'styled-components';
 import 'three';
+import TopNav from 'src/components/TopNav';
 
 const PageStyle = createGlobalStyle`
   html, body {
@@ -123,6 +124,7 @@ export default function HomePage () {
       </Head>
       <PageStyle />
       <PanoContainer ref={panoContainer} />
+      <TopNav />
     </div>
   );
 }

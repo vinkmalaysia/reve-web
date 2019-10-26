@@ -10,6 +10,12 @@ module.exports = {
     // CDN prefix
     config.output.publicPath = `${assetPath}${config.output.publicPath}`;
 
+    // SVG loader
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
     return config;
   },
 };
