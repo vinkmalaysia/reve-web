@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styled, { createGlobalStyle } from 'styled-components';
 import 'three';
 import TopNav from 'src/components/TopNav';
+import Jumbotron from 'src/components/Jumbotron';
 
 const PageStyle = createGlobalStyle`
   html, body {
@@ -125,6 +126,7 @@ export default function HomePage () {
       <PageStyle />
       <PanoContainer ref={panoContainer} />
       <TopNav />
+      <Jumbotron />
     </div>
   );
 }
