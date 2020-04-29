@@ -1,10 +1,13 @@
-module.exports = (ctx) => ({
+module.exports = {
   plugins: [
-    require('postcss-preset-env')(),
-    require('postcss-nested')(),
-    require('postcss-flexbugs-fixes')(),
-    require('autoprefixer')({
-      flexbox: 'no-2009',
-    }),
+    'postcss-preset-env',
+    'postcss-nested',
+    'postcss-flexbugs-fixes',
+    [
+      'autoprefixer',
+      {
+        flexbox: 'no-2009',
+      },
+    ],
   ],
-});
+};
