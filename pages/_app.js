@@ -1,6 +1,6 @@
 import React from 'react';
 import App from 'next/app';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { withRouter } from 'next/router';
 import { Provider } from 'react-redux';
