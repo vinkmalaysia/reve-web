@@ -17,11 +17,11 @@ const Logo = styled.h1`
   font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 200;
   margin: 0;
-  letter-spacing: -12px;
+  letter-spacing: 50px;
 `;
 
 const Slogan = styled.p`
-  display: block;
+  display: inline-block;
   color: rgba(255,255,255,0.9);
   font-size: 28px;
   font-family: 'Raleway', 'Segoe UI Light', sans-serif;
@@ -41,22 +41,25 @@ const ContactButton = styled.button`
   display: block;
   margin: 36px 12px;
   pointer-events: all;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-left: none;
-  border-bottom: none;
-  color: rgba(255,255,255,0.8);
-  background-color: transparent;
-  padding: 16px;
+  border: 2px solid  #ff55a6;
+  color: white;
+  background-color: rgba(0,0,0,0.08);
+  padding: 16px 24px;
   font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 2px;
+  font-size: 14px;
+  letter-spacing: 3px;
   cursor: pointer;
   text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
-  
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+  transition: all 0.25s;
+
   &:hover {
-    color: white;
-    border-color: #ff55a6;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    text-shadow: none;
+    padding-left: 28px;
+    padding-right: 28px;
   }
 `;
 
