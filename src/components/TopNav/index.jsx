@@ -18,14 +18,16 @@ const NavButtonItem = styled.a`
   display: inline-block;
   margin: 12px 6px;
   pointer-events: all;
-  
+  transition: all 70ms;
+
   svg {
     fill: rgba(221,221,221,0.8);
     width: 32px;
     height: 32px;
   }
-  
+
   &:hover {
+    transform: scale(1.25);
     svg {
       fill: white;
     }
