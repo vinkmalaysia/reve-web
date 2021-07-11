@@ -1,5 +1,5 @@
 import React from 'react';
-import Document, { Main, Head, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { Helmet } from 'react-helmet';
 
@@ -45,13 +45,13 @@ export default class extends Document {
 
   render () {
     return (
-      <html {...this.helmetHtmlAttrComponents}>
+      <Html {...this.helmetHtmlAttrComponents}>
         <Head>{this.helmetHeadComponents}</Head>
         <body {...this.helmetBodyAttrComponents}>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
