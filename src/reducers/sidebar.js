@@ -1,3 +1,5 @@
+import { HYDRATE } from 'next-redux-wrapper';
+
 const types = {
   SHOW: 'app/sidebar/SHOW',
   HIDE: 'app/sidebar/HIDE',
@@ -18,6 +20,9 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case HYDRATE:
+      return state;
+
     case types.SHOW:
       return {
         ...state,
