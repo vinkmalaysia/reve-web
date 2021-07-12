@@ -121,7 +121,7 @@ export default function HomePage () {
   return (
     <div>
       <Head>
-        <title>App</title>
+        <title>REVE - Interior Design</title>
       </Head>
       <PageStyle />
       <PanoContainer ref={panoContainer} />
