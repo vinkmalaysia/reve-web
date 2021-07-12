@@ -14,7 +14,9 @@ const appHandler = routes.getRequestHandler(app);
 // Custom express server
 const server = express();
 
-server.use(helmet());
+server.use(helmet({
+  contentSecurityPolicy: false,
+}));
 server.use(compression());
 
 app
