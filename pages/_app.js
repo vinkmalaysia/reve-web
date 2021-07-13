@@ -4,7 +4,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { withRouter } from 'next/router';
 import { wrapper } from 'src/store';
 
-import theme from 'src/theme.js';
+import theme from '../theme';
 
 // Global Styles
 const NormalizeCSS = createGlobalStyle` ${require('!!raw-loader!@csstools/normalize.css').default} `;
