@@ -1,5 +1,5 @@
 const isProd = process.env.NODE_ENV === 'production';
-const assetPath = isProd ? (process.env.CDN_HOST || '') : '';
+const assetPath = isProd ? (process.env.CDN_HOST || undefined) : undefined;
 
 module.exports = {
   poweredByHeader: false,
