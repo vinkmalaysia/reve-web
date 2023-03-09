@@ -5,7 +5,6 @@ module.exports = {
   poweredByHeader: false,
   compress: false, // Let express handle compression
   assetPrefix: assetPath,
-  target: 'server',
   webpack: (config, { dev }) => {
     // CDN prefix
     config.output.publicPath = `${assetPath}${config.output.publicPath}`;
