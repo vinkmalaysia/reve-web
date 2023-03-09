@@ -38,9 +38,8 @@
     "three": "^0.150.1"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production next build",
+    "build": "next build",
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider && next dev",
-    "start": "nodemon -w server server/index.js",
-    "serve": "cross-env NODE_ENV=production node server/index.js"
+    "start": "next start"
   }
 }
