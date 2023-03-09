@@ -1,20 +1,12 @@
 {
-  "env": {
-    "browser": true
-  },
   "extends": [
     "eslint-config-semistandard",
-    "plugin:react/recommended"
+    "next/core-web-vitals"
   ],
   "rules": {
     "camelcase": "off",
     "react/prop-types": "off",
     "comma-dangle": ["error", "always-multiline"],
     "import/no-webpack-loader-syntax": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
   }
 }

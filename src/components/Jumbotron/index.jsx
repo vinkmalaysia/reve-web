@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Head from 'next/head';
 
 const JumbotronContainer = styled.main`
   display: inline-block;
@@ -67,9 +66,6 @@ const ContactButton = styled.button`
 function Jumbotron () {
   return (
     <JumbotronContainer>
-      <Head>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:200,500&display=swap" rel="stylesheet" />
-      </Head>
       <Logo>REVE</Logo>
       <Slogan>LIVE IN YOUR DREAMS</Slogan>
       <ContactSection>
