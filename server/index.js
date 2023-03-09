@@ -3,13 +3,11 @@ const compression = require('compression');
 const next = require('next');
 const helmet = require('helmet');
 
-const routes = require('../src/routes');
-
 const dev = process.env.NODE_ENV !== 'production';
 const port = parseInt(process.env.PORT, 10) || 3000;
-const app = next({ dev });
 
-const appHandler = routes.getRequestHandler(app);
+// TODO Fix broken server script
+const app = next({ dev });
 
 // Custom express server
 const server = express();
@@ -22,7 +20,7 @@ server.use(compression());
 app
   .prepare()
   .then(() => {
-    server.all('*', appHandler);
+    server.all('*', app.getRequestHandler());
 
     server.listen(port, () => {
       console.log(`> Ready on http://localhost:${port}`);
