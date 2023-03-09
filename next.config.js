@@ -9,7 +9,8 @@ module.exports = {
   webpack: (config, { dev }) => {
     // SVG loader
     config.module.rules.push({
-      test: /\.svg$/,
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
     });
 
