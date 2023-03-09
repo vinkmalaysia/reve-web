@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Head from 'next/head';
 import styled, { createGlobalStyle } from 'styled-components';
 import 'three';
