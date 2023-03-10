@@ -1,4 +1,3 @@
-import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { Helmet } from 'react-helmet';
@@ -13,16 +12,14 @@ export default class CustomDocument extends Document {
           enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         });
 
-      const documentProps = await Document.getInitialProps(ctx);
+      const initialProps = await Document.getInitialProps(ctx);
       return {
-        ...documentProps,
+        ...initialProps,
         helmet: Helmet.renderStatic(),
-        styles: (
-          <>
-            {documentProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
+        styles: [
+          initialProps.styles,
+          sheet.getStyleElement(),
+        ],
       };
     } finally {
       sheet.seal();
@@ -45,7 +42,7 @@ export default class CustomDocument extends Document {
 
   render () {
     return (
-      <Html {...this.helmetHtmlAttrComponents}>
+      <Html lang="en" {...this.helmetHtmlAttrComponents}>
         <Head>
           {this.helmetHeadComponents}
           <link href="https://fonts.googleapis.com/css?family=Raleway:200,500&display=swap" rel="stylesheet" />
