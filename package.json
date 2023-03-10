@@ -10,7 +10,6 @@
     "cross-env": "^7.0.3",
     "helmet": "^6.0.1",
     "next-redux-wrapper": "^8.1.0",
-    "raw-loader": "^4.0.2",
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.5",
     "redux": "^4.2.1",
