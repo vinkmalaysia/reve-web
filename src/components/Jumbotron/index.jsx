@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import bp from 'src/utils/breakpoints';
 
 const JumbotronContainer = styled.main`
   display: inline-block;
@@ -13,11 +14,19 @@ const JumbotronContainer = styled.main`
 const Logo = styled.h1`
   color: rgba(255,255,255,0.75);
   text-shadow: 0 0 175px rgb(0 0 0 / 25%);
-  font-size: 260px;
+  font-size: 4.5rem;
   font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 600;
   margin: 0;
   letter-spacing: 6px;
+
+  @media screen and (min-width: ${bp.sm}) {
+    font-size: 6rem;
+  }
+
+  @media screen and (min-width: ${bp.md}) {
+    font-size: 8rem;
+  }
 `;
 
 const Slogan = styled.p`
