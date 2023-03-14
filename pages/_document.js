@@ -42,10 +42,10 @@ export default class CustomDocument extends Document {
 
   render () {
     return (
-      <Html lang="en" {...this.helmetHtmlAttrComponents}>
+      <Html {...this.helmetHtmlAttrComponents}>
         <Head>
-          {this.helmetHeadComponents}
           <link href="https://fonts.googleapis.com/css?family=Raleway:200,500&display=swap" rel="stylesheet" />
+          {this.helmetHeadComponents}
         </Head>
         <body {...this.helmetBodyAttrComponents}>
           <Main />
