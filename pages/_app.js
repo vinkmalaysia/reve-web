@@ -5,10 +5,9 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { withRouter } from 'next/router';
 import { wrapper } from 'src/store';
 
-import theme from '../theme';
-
 // Global Styles
-import '@csstools/normalize.css';
+import 'modern-normalize';
+import theme from '../theme';
 import 'src/stylesheets/global.css';
 
 const MyApp = ({ Component, ...rest }) => {
