@@ -4,25 +4,13 @@ import WhatsAppIcon from 'src/res/whatsapp.svg';
 import FacebookIcon from 'src/res/facebook.svg';
 import MessengerIcon from 'src/res/messenger.svg';
 
-const CanvasShadow = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  height: 90vh;
-  background: linear-gradient(hsl(309deg 76% 42% / 30%) 0%, hsl(309deg 28% 33% / 15%) 60%, hsl(309deg 20% 33% / 5%) 95%,rgb(107 60 100 / 0%) 100%);
-  pointer-events: none;
-`;
-
 const NavContainer = styled.nav`
-  padding: 16px;
+  display: flex;
+  justify-content: end;
 `;
 
 const NavButtonItem = styled.a`
-  display: inline-block;
-  margin: 12px 6px;
-  pointer-events: all;
+  display: block;
   transition: all 70ms;
 
   svg {
@@ -42,13 +30,23 @@ const NavButtonItem = styled.a`
 
 function TopNav () {
   return (
-    <CanvasShadow>
+    <>
       <NavContainer>
-        <NavButtonItem href="https://web.whatsapp.com" title="Contact via WhatsApp"><WhatsAppIcon /></NavButtonItem>
-        <NavButtonItem href="https://www.messenger.com" title="Contact via Messenger"><MessengerIcon /></NavButtonItem>
-        <NavButtonItem href="https://www.facebook.com" title="Find us on Facebook"><FacebookIcon /></NavButtonItem>
+        <div className="social-buttons">
+          <NavButtonItem href="https://web.whatsapp.com" title="Contact via WhatsApp"><WhatsAppIcon /></NavButtonItem>
+          <NavButtonItem href="https://www.messenger.com" title="Contact via Messenger"><MessengerIcon /></NavButtonItem>
+          <NavButtonItem href="https://www.facebook.com" title="Find us on Facebook"><FacebookIcon /></NavButtonItem>
+          <style jsx>{`
+            .social-buttons {
+              display: inline-flex;
+              margin: 16px;
+              gap: 8px;
+              pointer-events: auto;
+            }
+          `}</style>
+        </div>
       </NavContainer>
-    </CanvasShadow>
+    </>
   );
 }
 

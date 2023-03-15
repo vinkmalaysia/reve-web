@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import 'three';
 import TopNav from 'src/components/TopNav';
 import Jumbotron from 'src/components/Jumbotron';
+import bp from 'src/utils/breakpoints';
 
 const PageStyle = createGlobalStyle`
   html, body {
@@ -11,16 +12,48 @@ const PageStyle = createGlobalStyle`
     width: 100vw;
     height: 100%;
     overflow: hidden;
-    background-color: black;
+  }
+
+  #__next {
+    min-height: 100%;
+  }
+`;
+
+const MainContainer = styled.main`
+  position: relative;
+  top: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  pointer-events: none;
+
+  @media screen and (min-width: ${bp.md}) {
+    max-width: 800px;
+  }
+
+  @media screen and (min-width: ${bp.lg}) {
+    max-width: 1200px;
+  }
+
+  @media screen and (min-width: ${bp.xl}) {
+    max-width: 1440px;
   }
 `;
 
 const PanoContainer = styled.div`
+  position: absolute;
+  top: 0;
   width: 100%;
-  min-height: 100%;
-  height: stretch;
   height: 100vh;
-  opacity: 0.8;
+  pointer-events: auto;
+`;
+
+const CanvasShadow = styled.div`
+  position: absolute;
+  top: 0;
+  background: linear-gradient(hsla(0, 0%, 0%, 0.75) 0%, hsla(0, 0%, 0%, 0.65) 30%, hsl(0 0% 0% / 40%) 70%, hsl(0 0% 33% / 25%) 100%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 `;
 
 function randomIntInRange (min, max) {
@@ -119,14 +152,26 @@ export default function HomePage () {
   });
 
   return (
-    <div>
+    <>
       <Head>
         <title>REVE - Interior Design</title>
       </Head>
       <PageStyle />
-      <PanoContainer ref={panoContainer} />
-      <TopNav />
-      <Jumbotron />
-    </div>
+      <div className="wrapper">
+        <PanoContainer ref={panoContainer}>
+          <CanvasShadow />
+        </PanoContainer>
+        <MainContainer>
+          <TopNav />
+          <Jumbotron />
+        </MainContainer>
+        <style jsx>{`
+          .wrapper {
+            min-height: 100%;
+            position: relative;
+          }
+        `}</style>
+      </div>
+    </>
   );
 }
