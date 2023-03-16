@@ -76,7 +76,7 @@ const ContactButton = styled.button`
   border: 0;
   border-radius: 9999px;
   color: white;
-  background-color: #ff55a6;
+  background: linear-gradient(335deg, #ff55a6, #5b3dff);
   padding: 16px 24px;
   font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 600;
@@ -88,8 +88,7 @@ const ContactButton = styled.button`
   pointer-events: auto;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.6);
-    text-shadow: none;
+    background: linear-gradient(335deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     color: #ff55a6;
   }
 `;
