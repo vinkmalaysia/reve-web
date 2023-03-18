@@ -89,6 +89,9 @@ export default function PanoramaSlideshow (props) {
         container: containerRef.current,
       });
 
+      // Set FOV
+      viewerRef.current.setCameraFov(55);
+
       // Load images
       images.forEach(src => {
         let p;
