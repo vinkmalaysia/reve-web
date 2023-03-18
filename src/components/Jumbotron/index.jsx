@@ -55,7 +55,7 @@ const Slogan = styled.p`
   padding: 0 24px;
   border-left-style: solid;
   border-right-style: solid;
-  border-color: #ff55a6;
+  border-color: #ce8eec;
   border-width: 4px;
   text-transform: uppercase;
   pointer-events: auto;
