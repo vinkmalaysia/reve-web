@@ -11,13 +11,18 @@ const NavContainer = styled.nav`
 
 const NavButtonItem = styled.a`
   display: block;
-  transition: all 70ms;
+  line-height: 0;
+  transition: all 150ms;
+  padding: 6px;
+  border-radius: 9999px;
+  border: solid 4px rgba(255, 255, 255, .25);
+
 
   svg {
-    fill: rgba(221,221,221,0.8);
-    width: 32px;
-    height: 32px;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.4));
+    fill: rgba(221, 221, 221, 0.8);
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
   }
 
   &:hover {
