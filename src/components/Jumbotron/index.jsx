@@ -67,16 +67,37 @@ const Slogan = styled.p`
   }
 `;
 
-const ContactSection = styled.section`
-
-`;
-
 const ContactButton = styled.button`
   margin: 36px 0;
   border: 0;
   border-radius: 9999px;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   background: linear-gradient(335deg, #ff55a6, #5b3dff);
+  padding: 16px 24px;
+  font-family: 'Raleway', 'Segoe UI Light', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: scale(0.95);
+  transition: all 0.25s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: inset 0 1px 2px rgba(244, 232, 255, 0.9), inset 0 0px 10px rgba(255, 255, 255, 0.4), 0 0 30px rgba(183, 76, 255, 0.75);
+    transform: scale(1);
+  }
+`;
+
+const PortfolioButton = styled.button`
+  margin: 36px 0;
+  margin-left: 8px;
+  border: solid 2px rgba(255, 255, 255, 0.6);
+  border-radius: 9999px;
+  color: rgba(255, 255, 255, 0.8);
+  background: transparent;
   padding: 16px 24px;
   font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 600;
@@ -86,10 +107,12 @@ const ContactButton = styled.button`
   cursor: pointer;
   transition: all 0.25s;
   pointer-events: auto;
+  transform: scale(0.95);
 
   &:hover {
-    background: linear-gradient(335deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    color: #ff55a6;
+    border: solid 2px rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1);
   }
 `;
 
@@ -98,11 +121,12 @@ function Jumbotron () {
     <JumbotronContainer>
       <Logo>REVE</Logo>
       <Slogan>Inspiring Spaces, Crafted for You</Slogan>
-      <ContactSection>
+      <section>
         <a href="https://facebook.com">
           <ContactButton>Get Free Quote</ContactButton>
+          <PortfolioButton>Portfolio</PortfolioButton>
         </a>
-      </ContactSection>
+      </section>
     </JumbotronContainer>
   );
 }
