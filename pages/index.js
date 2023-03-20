@@ -9,8 +9,16 @@ const PageStyle = createGlobalStyle`
   html, body {
     margin: 0;
     width: 100vw;
-    height: 100%;
     overflow: hidden;
+  }
+
+  html {
+    height: 100%;
+
+  }
+
+  body {
+    min-height: 100%;
   }
 
   #__next {
