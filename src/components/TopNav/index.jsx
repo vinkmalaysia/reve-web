@@ -27,8 +27,9 @@ const NavButtonItem = styled.a`
 
   &:hover {
     transform: scale(1.25);
+
     svg {
-      fill: white;
+      fill: #ce8eec;
     }
   }
 `;
