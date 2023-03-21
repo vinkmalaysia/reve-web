@@ -27,10 +27,10 @@ const Logo = styled.h1`
   color: rgba(255, 255, 255, 0.75);
   text-shadow: 0 0 175px rgb(0 0 0 / 25%);
   font-size: 4.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
-  letter-spacing: 6px;
+  letter-spacing: -1px;
   pointer-events: auto;
 
   @media screen and (min-width: ${bp.sm}) {
@@ -49,7 +49,6 @@ const Slogan = styled.p`
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1px;
-  margin-top: 16px;
   padding: 0 24px;
   border-left-style: solid;
   border-right-style: solid;
@@ -59,14 +58,25 @@ const Slogan = styled.p`
   pointer-events: auto;
 
   @media screen and (min-width: ${bp.sm}) {
-    font-size: 28px;
+    font-size: 1.875rem;
     font-weight: 500;
     letter-spacing: 2px;
   }
 `;
 
+const ActionsSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 60px 0;
+
+  @media screen and (min-width: ${bp.sm}) {
+    flex-direction: row;
+    gap: 6px;
+  }
+`;
+
 const ContactButton = styled.button`
-  margin: 36px 0;
   border: 0;
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.8);
@@ -78,19 +88,15 @@ const ContactButton = styled.button`
   letter-spacing: 2px;
   cursor: pointer;
   pointer-events: auto;
-  transform: scale(0.95);
   transition: all 0.25s;
 
   &:hover {
     color: rgba(255, 255, 255, 1);
     box-shadow: inset 0 1px 2px rgba(244, 232, 255, 0.9), inset 0 0px 10px rgba(255, 255, 255, 0.4), 0 0 30px rgba(183, 76, 255, 0.75);
-    transform: scale(1);
   }
 `;
 
 const PortfolioButton = styled.button`
-  margin: 36px 0;
-  margin-left: 8px;
   border: solid 2px rgba(255, 255, 255, 0.6);
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.8);
@@ -103,12 +109,10 @@ const PortfolioButton = styled.button`
   cursor: pointer;
   transition: all 0.25s;
   pointer-events: auto;
-  transform: scale(0.95);
 
   &:hover {
     border: solid 2px rgba(255, 255, 255, 1);
     color: rgba(255, 255, 255, 1);
-    transform: scale(1);
   }
 `;
 
@@ -117,12 +121,10 @@ function Jumbotron () {
     <JumbotronContainer>
       <Logo>REVE</Logo>
       <Slogan>Inspiring Spaces, Crafted for You</Slogan>
-      <section>
-        <a href="https://facebook.com">
-          <ContactButton>Get Free Quote</ContactButton>
-          <PortfolioButton>Portfolio</PortfolioButton>
-        </a>
-      </section>
+      <ActionsSection>
+        <ContactButton>Get Free Quote</ContactButton>
+        <PortfolioButton>Portfolio</PortfolioButton>
+      </ActionsSection>
     </JumbotronContainer>
   );
 }

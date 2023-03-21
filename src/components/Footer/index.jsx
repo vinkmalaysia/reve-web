@@ -8,7 +8,7 @@ const poppinsFont = Poppins({
 export default function Footer () {
   return (
     <footer>
-      Copyright &copy; Reve Interior Design | reve_interior@gmail.com | 018-9857161
+      &copy;&nbsp;Reve Interior Design&nbsp;&nbsp;&nbsp;Contact:&nbsp;&nbsp;&nbsp;reve_interior@gmail.com&nbsp;&nbsp;&nbsp;018-9857161
       <style jsx>
         {`
         footer {

@@ -12,7 +12,7 @@ import { Raleway } from 'next/font/google';
 import 'src/stylesheets/global.css';
 
 const ralewayFont = Raleway({
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
 });
 

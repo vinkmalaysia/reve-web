@@ -46,7 +46,7 @@ function TopNav () {
     <>
       <NavContainer>
         <div className={`contact ${poppinsFont.className}`}>
-          <span className="label">Contact:</span>018-9857161
+          Contact:<span className="phone">018-9857161</span>
           <style jsx>{`
             .contact {
               display: inline-flex;
@@ -57,9 +57,9 @@ function TopNav () {
               pointer-events: auto;
             }
 
-            .label {
+            .phone {
               font-weight: bold;
-              margin-right: 6px;
+              margin-left: 6px;
             }
           `}</style>
         </div>
