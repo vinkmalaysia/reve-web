@@ -27,7 +27,6 @@ const Logo = styled.h1`
   color: rgba(255, 255, 255, 0.75);
   text-shadow: 0 0 175px rgb(0 0 0 / 25%);
   font-size: 4.5rem;
-  font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 600;
   margin: 0;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
@@ -48,7 +47,6 @@ const Slogan = styled.p`
   width: fit-content;
   color: rgba(255,255,255,0.9);
   font-size: 16px;
-  font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
   margin-top: 16px;
@@ -74,7 +72,6 @@ const ContactButton = styled.button`
   color: rgba(255, 255, 255, 0.8);
   background: linear-gradient(335deg, #ff55a6, #5b3dff);
   padding: 16px 24px;
-  font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 12px;
@@ -99,7 +96,6 @@ const PortfolioButton = styled.button`
   color: rgba(255, 255, 255, 0.8);
   background: transparent;
   padding: 16px 24px;
-  font-family: 'Raleway', 'Segoe UI Light', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 12px;

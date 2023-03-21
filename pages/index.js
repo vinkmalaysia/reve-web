@@ -8,14 +8,11 @@ import bp from 'src/utils/breakpoints';
 
 const PageStyle = createGlobalStyle`
   html, body {
-    margin: 0;
-    width: 100vw;
     overflow: hidden;
   }
 
   html {
     height: 100%;
-
   }
 
   body {

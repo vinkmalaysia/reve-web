@@ -1,5 +1,5 @@
-body {
-  font-family: 'Raleway', 'Segoe UI Light', 'Arial', sans-serif;
+html, body {
+  margin: 0;
 }
 
 a {

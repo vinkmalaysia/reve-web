@@ -44,7 +44,6 @@ export default class CustomDocument extends Document {
     return (
       <Html {...this.helmetHtmlAttrComponents}>
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Raleway:200,500&display=swap" rel="stylesheet" />
           {this.helmetHeadComponents}
         </Head>
         <body {...this.helmetBodyAttrComponents}>
