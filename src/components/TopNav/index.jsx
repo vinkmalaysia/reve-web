@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Poppins } from 'next/font/google';
+
 import WhatsAppIcon from 'src/res/whatsapp.svg';
 import FacebookIcon from 'src/res/facebook.svg';
 import MessengerIcon from 'src/res/messenger.svg';
+
+const poppinsFont = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 const NavContainer = styled.nav`
   display: flex;
@@ -38,13 +45,21 @@ function TopNav () {
   return (
     <>
       <NavContainer>
-        <div className="contact">
-          Contact: 018-9857161
+        <div className={`contact ${poppinsFont.className}`}>
+          <span className="label">Contact:</span>018-9857161
           <style jsx>{`
             .contact {
               display: inline-flex;
               align-items: center;
+              font-size: 0.875rem;
               color: #eee;
+              margin: 0 16px;
+              pointer-events: auto;
+            }
+
+            .label {
+              font-weight: bold;
+              margin-right: 6px;
             }
           `}</style>
         </div>
