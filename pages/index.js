@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styled, { createGlobalStyle } from 'styled-components';
 import TopNav from 'src/components/TopNav';
 import Jumbotron from 'src/components/Jumbotron';
+import Footer from 'src/components/Footer';
 import PanoramaSlideshow from 'src/components/PanoramaSlideshow';
 import bp from 'src/utils/breakpoints';
 
@@ -70,7 +71,7 @@ export default function HomePage () {
         <title>REVE - Interior Design</title>
       </Head>
       <PageStyle />
-      <div className="wrapper">
+      <div className="slide-wrapper">
         <SlideshowContainer>
           <CanvasShadow />
           <PanoramaSlideshow />
@@ -79,9 +80,10 @@ export default function HomePage () {
           <TopNav />
           <Jumbotron />
         </MainContainer>
+        <Footer />
         <style jsx>{`
-          .wrapper {
-            min-height: 100%;
+          .slide-wrapper {
+            height: 100vh;
             position: relative;
           }
         `}</style>
