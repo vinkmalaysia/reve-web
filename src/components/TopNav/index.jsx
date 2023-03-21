@@ -38,6 +38,16 @@ function TopNav () {
   return (
     <>
       <NavContainer>
+        <div className="contact">
+          Contact: 018-9857161
+          <style jsx>{`
+            .contact {
+              display: inline-flex;
+              align-items: center;
+              color: #eee;
+            }
+          `}</style>
+        </div>
         <div className="social-buttons">
           <NavButtonItem href="https://web.whatsapp.com" title="Contact via WhatsApp"><WhatsAppIcon /></NavButtonItem>
           <NavButtonItem href="https://www.messenger.com" title="Contact via Messenger"><MessengerIcon /></NavButtonItem>
