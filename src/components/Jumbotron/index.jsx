@@ -26,12 +26,11 @@ const JumbotronContainer = styled.section`
 const Logo = styled.h1`
   display: block;
   width: min-content;
-  color: rgba(255, 255, 255, 0.75);
+  color: #fff;
   text-shadow: 0 0 175px rgb(0 0 0 / 25%);
   font-size: 4.5rem;
   font-weight: 700;
   margin: 0;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
   letter-spacing: -1px;
   pointer-events: auto;
 
@@ -44,24 +43,33 @@ const Logo = styled.h1`
   }
 `;
 
+const CategoryText = styled.div`
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 6px 24px;
+  background-image: linear-gradient(120deg, #1f253f 0%, #1e1f26 100%);
+  width: max-content;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  pointer-events: auto;
+  line-height: 1.25rem;
+`;
+
 const Slogan = styled.p`
   display: block;
   width: fit-content;
-  color: rgba(255,255,255,0.9);
+  color: #eddeff;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 1px;
-  padding: 0 24px;
-  border-left-style: solid;
-  border-right-style: solid;
-  border-color: #ce8eec;
-  border-width: 4px;
   text-transform: uppercase;
   pointer-events: auto;
+  text-shadow: #551965 0 0 16px;
+  mix-blend-mode: difference;
 
   @media screen and (min-width: ${bp.sm}) {
     font-size: 1.875rem;
-    font-weight: 500;
     letter-spacing: 2px;
   }
 `;
@@ -160,7 +168,8 @@ function Jumbotron () {
 
   return (
     <JumbotronContainer>
-      <Logo>REVE</Logo>
+      <Logo className="logo">REVE</Logo>
+      <CategoryText>Interior Design</CategoryText>
       <Slogan>Inspiring Spaces, Crafted for You</Slogan>
       <ActionsSection>
         <ContactButton>Get Free Quote</ContactButton>
