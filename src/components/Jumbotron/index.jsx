@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import css from 'styled-jsx/css';
 import { useFloating, FloatingPortal, FloatingOverlay, useClick, useDismiss, useInteractions, useTransitionStatus } from '@floating-ui/react';
+import SplitType from 'split-type';
+import { animate, stagger } from 'framer-motion';
 import bp from 'src/utils/breakpoints';
 
 const JumbotronContainer = styled.section`
@@ -25,7 +27,6 @@ const JumbotronContainer = styled.section`
 
 const Logo = styled.h1`
   display: block;
-  width: min-content;
   color: #fff;
   text-shadow: 0 0 175px rgb(0 0 0 / 25%);
   font-size: 4.5rem;
@@ -33,6 +34,8 @@ const Logo = styled.h1`
   margin: 0;
   letter-spacing: -1px;
   pointer-events: auto;
+  font-kerning: none;
+  overflow: hidden;
 
   @media screen and (min-width: ${bp.sm}) {
     font-size: 6rem;
@@ -59,7 +62,7 @@ const CategoryText = styled.div`
 const Slogan = styled.p`
   display: block;
   width: fit-content;
-  color: #eddeff;
+  color: #fff5fc;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -166,14 +169,62 @@ function Jumbotron () {
 
   const projects = new Array(8).fill(true).map((_, i) => ({ id: i }));
 
+  useEffect(() => {
+    const logoSplitText = new SplitType("[data-animate-id='logo']", { tagName: 'span', types: 'chars' });
+    animate([
+      [
+        logoSplitText.chars,
+        {
+          y: ['100%', '0%'],
+          opacity: [0, 1],
+        },
+        { duration: 0.6, delay: stagger(0.15, { startDelay: 0.6 }) },
+      ],
+      [
+        "[data-animate-id='category']",
+        {
+          y: ['100%', '0%'],
+          opacity: [0, 1],
+        },
+        { ease: 'easeOut', duration: 0.6, at: '-0.4' },
+      ],
+      [
+        "[data-animate-id='slogan']",
+        {
+          y: ['100%', '0%'],
+          opacity: [0, 1],
+        },
+        { ease: 'easeOut', duration: 0.6 },
+      ],
+      [
+        "[data-animate-id='btn-contact']",
+        {
+          opacity: [0, 1],
+        },
+        { ease: 'easeOut', duration: 0.6 },
+      ],
+      [
+        "[data-animate-id='btn-portfolio']",
+        {
+          opacity: [0, 1],
+        },
+        { ease: 'easeOut', duration: 0.6 },
+      ],
+    ]);
+
+    return () => {
+      SplitType.revert("[data-animate-id='logo']");
+    };
+  }, []);
+
   return (
     <JumbotronContainer>
-      <Logo className="logo">REVE</Logo>
-      <CategoryText>Interior Design</CategoryText>
-      <Slogan>Inspiring Spaces, Crafted for You</Slogan>
+      <Logo data-animate-id="logo">REVE</Logo>
+      <CategoryText data-animate-id="category">Interior Design</CategoryText>
+      <Slogan data-animate-id="slogan">Inspiring Spaces, Crafted for You</Slogan>
       <ActionsSection>
-        <ContactButton>Get Free Quote</ContactButton>
-        <PortfolioButton ref={refs.setReference} {...getReferenceProps()}>Portfolio</PortfolioButton>
+        <ContactButton data-animate-id="btn-contact">Get Free Quote</ContactButton>
+        <PortfolioButton data-animate-id="btn-portfolio" ref={refs.setReference} {...getReferenceProps()}>Portfolio</PortfolioButton>
       </ActionsSection>
       {isMounted && (
         <FloatingPortal>
