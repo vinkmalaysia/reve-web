@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import TopNav from 'src/components/TopNav';
 import Jumbotron from 'src/components/Jumbotron';
 import Footer from 'src/components/Footer';
-import PanoramaSlideshow from 'src/components/PanoramaSlideshow';
+import dynamic from 'next/dynamic';
 import bp from 'src/utils/breakpoints';
 
 const PageStyle = createGlobalStyle`
@@ -61,6 +61,10 @@ const CanvasShadow = styled.div`
   pointer-events: none;
 `;
 
+const PanoramaSlideshow = dynamic(() => import('src/components/PanoramaSlideshow'), {
+  ssr: false,
+});
+
 export default function HomePage () {
   return (
     <>
@@ -70,8 +74,8 @@ export default function HomePage () {
       <PageStyle />
       <div className="slide-wrapper">
         <SlideshowContainer>
-          <CanvasShadow />
           <PanoramaSlideshow />
+          <CanvasShadow />
         </SlideshowContainer>
         <MainContainer>
           <TopNav />
