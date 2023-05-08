@@ -34,7 +34,13 @@ const PortfolioGrid = forwardRef(function PortfolioGrid ({ opened, ...props }, r
         {
           projects.map(id => (
             <div key={id}>
-              <Image src={`/img/portfolio/${id}`} fill={true} style={{ objectFit: 'cover' }} />
+              <Image
+                src={`/img/portfolio/${id}`}
+                fill={true}
+                style={{ objectFit: 'cover' }}
+                alt="Project rendering"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           ))
         }
