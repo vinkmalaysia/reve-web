@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import css from 'styled-jsx/css';
-import { useFloating, FloatingPortal, FloatingOverlay, useClick, useDismiss, useInteractions, useTransitionStatus } from '@floating-ui/react';
+import { FloatingOverlay, FloatingPortal, useClick, useDismiss, useFloating, useInteractions, useTransitionStatus } from '@floating-ui/react';
 import SplitType from 'split-type';
 import { animate, stagger } from 'framer-motion';
 import bp from 'src/utils/breakpoints';
+import PortfolioGrid from '../PortfolioGrid';
 
 const JumbotronContainer = styled.section`
   margin-top: 32px;
@@ -167,8 +168,6 @@ function Jumbotron () {
 
   const { isMounted, status } = useTransitionStatus(context, { duration: 600 });
 
-  const projects = new Array(8).fill(true).map((_, i) => ({ id: i }));
-
   useEffect(() => {
     const logoSplitText = new SplitType("[data-animate-id='logo']", { tagName: 'span', types: 'chars' });
     animate([
@@ -303,73 +302,7 @@ function Jumbotron () {
                   }
                 `}</style>
               </div>
-              <section className="portfolioWrapper" ref={refs.setFloating} {...getFloatingProps()}>
-                <div className="portfolioGrid" data-status={status}>
-                  {
-                    projects.map(p => (
-                      <div key={p.id}></div>
-                    ))
-                  }
-                </div>
-                <style jsx>{`
-                  .portfolioWrapper {
-                    color: black;
-                    padding: 16px;
-                    margin: 16px;
-                    margin-top: 160px;
-                    width: 100%;
-                    pointer-events: none;
-                  }
-
-                  .portfolioGrid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
-                    gap: 1.2rem;
-                    place-content: center;
-                    pointer-events: none;
-                    opacity: 0;
-                    transform: perspective(900px) rotateX(-45deg) scale(0.7);
-                    transition: all 600ms ease;
-                  }
-
-                  @media screen and (min-width: ${bp.lg}) {
-                    .portfolioGrid {
-                      gap: 1rem;
-                    }
-                  }
-
-                  .portfolioGrid[data-status='open'] {
-                    opacity: 1;
-                    transform: rotate(0deg) scale(1);
-                  }
-
-
-                  @media screen and (min-height: 800px) {
-                    .portfolioGrid > div {
-                      height: 400px;
-                    }
-                  }
-
-                  .portfolioGrid > div:hover {
-                    background-color: rgba(40, 40, 40);
-                    box-shadow: none;
-                    transform: scale(1.05);
-                  }
-
-                  .portfolioGrid > div {
-                    background-color: rgba(17, 17, 17, 0.9);
-                    border-radius: 12px;
-                    padding: 6px;
-                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4),
-                    0px 6px 12px rgba(0, 0, 0, 0.1);
-                    transition: box-shadow 300ms ease, transform 300ms, background-color ease 300ms;
-                    width: 100%;
-                    height: 300px;
-                    pointer-events: auto;
-                    cursor: pointer;
-                  }
-                `}</style>
-              </section>
+              <PortfolioGrid opened={status === 'open'} ref={refs.setFloating} {...getFloatingProps()} />
             </>
           </FloatingOverlay>
           {overlayStyle.styles}
