@@ -68,7 +68,7 @@ const Slogan = styled.p`
   letter-spacing: 1px;
   text-transform: uppercase;
   pointer-events: auto;
-  text-shadow: #551965 0 0 16px;
+  text-shadow: #2f2f2f 0 0 16px;
   mix-blend-mode: difference;
 
   @media screen and (min-width: ${bp.sm}) {
@@ -135,7 +135,7 @@ const overlayStyle = css.resolve`
     display: grid;
     place-items: center;
     isolation: isolate;
-    background: rgb(36 46 89 / 75%);
+    background: rgb(130 134 157 / 75%);
     backdrop-filter: saturate(50%) blur(4px);
     opacity: 0;
     transition: opacity 250ms;

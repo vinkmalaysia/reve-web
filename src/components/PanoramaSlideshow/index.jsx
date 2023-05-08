@@ -9,7 +9,7 @@ const Container = styled.div`
   width: 100%;
 
   canvas {
-    filter: blur(3px);
+    filter: blur(0px);
   }
 `;
 
