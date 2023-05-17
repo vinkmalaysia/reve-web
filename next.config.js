@@ -4,6 +4,9 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    unoptimized: true,
+  },
   poweredByHeader: false,
   compress: false, // Let express handle compression
   webpack: (config, { dev }) => {
