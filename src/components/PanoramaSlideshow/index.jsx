@@ -51,7 +51,7 @@ export default function PanoramaSlideshow (props) {
    * Change panorama randomly
    * @param delay 0: immediately, >0: change after wait for, unspecified: randomly
    */
-  function updateRandomPanorama (delay) {
+  const updateRandomPanorama = useCallback(delay => {
     // Do nothing if no other panorama in list
     const panoramasArr = viewerRef.current.getScene().children;
 
@@ -82,16 +82,16 @@ export default function PanoramaSlideshow (props) {
       if (slideTimer.current) clearTimeout(slideTimer.current);
       slideTimer.current = setTimeout(() => updateRandomPanorama(0), nextTimeout);
     }
-  }
+  }, []);
 
   /**
    * Resume autoplay after user interaction
    */
-  const resumeAutoplay = () => {
+  const resumeAutoplay = useCallback(() => {
     // After auto-rotate resumed
     // Wait for 3 seconds before transition into next panorama
     updateRandomPanorama(autoRotateResumeDelay + 3000);
-  };
+  }, [updateRandomPanorama]);
 
   // Mount
   const setContainerRef = useCallback(node => {
@@ -134,7 +134,7 @@ export default function PanoramaSlideshow (props) {
 
       viewerRef.current = null;
     }
-  }, []);
+  }, [updateRandomPanorama, resumeAutoplay]);
 
   return <Container ref={setContainerRef} />;
 }
