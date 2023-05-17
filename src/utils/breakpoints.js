@@ -1,4 +1,4 @@
-export default {
+const breakpoints = {
   xs: '320px',
   sm: '640px',
   md: '768px',
@@ -6,3 +6,5 @@ export default {
   xl: '1280px',
   '2xl': '1536px',
 };
+
+export default breakpoints;
